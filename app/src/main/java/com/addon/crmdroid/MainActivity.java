@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         if (sharedPreferences.contains(USER_INFO)) {
+            //TODO: Get user info from shared preference.
         } else {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivityForResult(intent, REQUEST_LOGIN);
@@ -38,5 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void actionFilterLeads(View view) {
+        Intent intent = new Intent(this, LeadsActivity.class);
+        startActivity(intent);
     }
 }

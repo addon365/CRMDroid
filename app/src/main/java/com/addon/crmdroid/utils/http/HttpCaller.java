@@ -9,6 +9,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+import static com.addon.crmdroid.utils.http.HttpRequest.GET;
+import static com.addon.crmdroid.utils.http.HttpRequest.POST;
+
 
 /**
  * Created by sathishbabur on 1/31/2018.
@@ -43,19 +46,30 @@ public class HttpCaller extends AsyncTask<HttpRequest, String, HttpResponse> {
         HttpRequest httpRequest = httpRequests[0];
         HttpResponse httpResponse = new HttpResponse();
         OkHttpClient client = new OkHttpClient();
+        Request request = null;
         try {
+            switch (httpRequest.getMethodType()) {
+                case POST:
+                    request = new Request.Builder()
+                            .url(httpRequest.getUrl())
+                            .post(httpRequest.getRequestBody())
+                            .build();
+                    break;
+                case GET:
+                    request = new Request.Builder()
+                            .url(httpRequest.getUrl())
+                            .get()
+                            .build();
+                    break;
+            }
 
-            Request request = new Request.Builder()
-                    .url(httpRequest.getUrl())
-                    .post(httpRequest.getRequestBody())
-                    .build();
             Response response = client.newCall(request).execute();
 
             String message = response.body().string();
             if (response.isSuccessful()) {
                 httpResponse.setSuccessMessage(message);
             } else {
-                httpResponse.setErrorMessage(message);
+                httpResponse.setErrorMessage(response.message());
             }
             response.body().close();
             return httpResponse;

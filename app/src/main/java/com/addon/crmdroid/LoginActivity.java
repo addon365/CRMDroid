@@ -51,7 +51,6 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     UpdateSharedPreference(response.getMesssage());
                     finish();
-
                 }
             }
         }.execute(request);
@@ -62,9 +61,11 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(PREFERENCE_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(USER_INFO, jsonString);
+        editor.commit();
     }
 
     private void showSnackbar(String message) {
         Snackbar snackbar = Snackbar.make(scrollView, message, Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
 }

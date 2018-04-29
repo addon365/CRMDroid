@@ -3,16 +3,16 @@ package com.addon.crmdroid.models;
 import java.util.UUID;
 
 public class Profile {
-    public UUID profileId;
-    public String name;
-    public String address1;
-    public String address2;
-    public String area;
-    public String city;
-    public String district;
-    public String state;
-    public String pincode;
-    public String mobileNumber;
+    private UUID profileId;
+    private String name;
+    private String address1;
+    private String address2;
+    private String area;
+    private String city;
+    private String district;
+    private String state;
+    private String pincode;
+    private String mobileNumber;
 
     public UUID getProfileId() {
         return profileId;

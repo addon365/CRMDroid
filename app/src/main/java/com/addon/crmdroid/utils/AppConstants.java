@@ -14,8 +14,13 @@ public class AppConstants {
     public static final String PARAM_LOGIN_ID = "UserName";
     public static final String PARAM_PASSWORD = "Password";
 
-    private static final String URL_FEED = "http://addon.cc/api";
-    private static final String ACTION_LOGIN_VALIDATION = "/Users/Validate";
+    private static final String URL_FEED = "http://addon.cc/api/";
+    private static final String ACTION_LOGIN_VALIDATION = "Users/Validate";
+    private static final String ACTION_GET_LEADS = "leads";
+
+    public static String getLeadsAction() {
+        return URL_FEED + ACTION_GET_LEADS;
+    }
 
     public static String getLoginAction() {
         return URL_FEED + ACTION_LOGIN_VALIDATION;

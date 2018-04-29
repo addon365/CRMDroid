@@ -25,7 +25,8 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".LeadListActivity"></activity>
+        <activity android:name=".LeadListActivity" />
+        <activity android:name=".LeadsActivity"></activity>
     </application>
 
 </manifest>

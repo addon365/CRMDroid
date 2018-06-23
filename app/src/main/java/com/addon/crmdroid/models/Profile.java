@@ -3,7 +3,7 @@ package com.addon.crmdroid.models;
 import java.util.UUID;
 
 public class Profile {
-    private UUID profileId;
+    private UUID id;
     private String name;
     private String address1;
     private String address2;
@@ -14,12 +14,12 @@ public class Profile {
     private String pincode;
     private String mobileNumber;
 
-    public UUID getProfileId() {
-        return profileId;
+    public UUID getId() {
+        return id;
     }
 
-    public void setProfileId(UUID profileId) {
-        this.profileId = profileId;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getName() {

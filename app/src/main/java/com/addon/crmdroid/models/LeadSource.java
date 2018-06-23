@@ -3,17 +3,17 @@ package com.addon.crmdroid.models;
 import java.util.UUID;
 
 public class LeadSource {
-    private UUID leadSourceId;
+    private UUID id;
     private String name;
     private String code;
     private String progId;
 
-    public UUID getLeadSourceId() {
-        return leadSourceId;
+    public UUID getId() {
+        return id;
     }
 
-    public void setLeadSourceId(UUID leadSourceId) {
-        this.leadSourceId = leadSourceId;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public String getName() {

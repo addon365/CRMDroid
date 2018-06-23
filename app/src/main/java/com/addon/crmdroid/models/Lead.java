@@ -1,14 +1,15 @@
 package com.addon.crmdroid.models;
 
-import com.addon.crmdroid.adapters.DateConvertAdapter;
+
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.util.Calendar;
 import java.util.UUID;
 
+import static com.addon.crmdroid.utils.AppConstants.getGson;
+
 public class Lead {
-    private UUID leadId;
+    private UUID id;
     private Calendar createdDate;
     private UUID leadSourceId;
     private UUID profileId;
@@ -18,12 +19,12 @@ public class Lead {
     private LeadSource leadSource;
     private Profile profile;
 
-    public UUID getLeadId() {
-        return leadId;
+    public UUID getId() {
+        return id;
     }
 
-    public void setLeadId(UUID leadId) {
-        this.leadId = leadId;
+    public void setId(UUID leadId) {
+        this.id = leadId;
     }
 
     public Calendar getCreatedDate() {
@@ -82,12 +83,21 @@ public class Lead {
         this.profile = profile;
     }
 
-    public static Lead[] fromJson(String messsage) {
-        Gson gson = new GsonBuilder()
-                .registerTypeAdapter(Calendar.class, new DateConvertAdapter())
-                .create();
-        Lead[] leads = gson.fromJson(messsage, Lead[].class);
+    public static Lead[] fromJson(String message) {
+        Gson gson = getGson();
+        Lead[] leads = gson.fromJson(message, Lead[].class);
         return leads;
+    }
+
+    public static Lead fromJsonSingle(String message) {
+        Gson gson = getGson();
+        Lead lead = gson.fromJson(message, Lead.class);
+        return lead;
+    }
+
+    public String toJson() {
+        Gson gson = getGson();
+        return gson.toJson(this);
     }
 
     public String getDateAsString() {

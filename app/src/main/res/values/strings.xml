@@ -15,4 +15,13 @@
         completions."
     </string>
     <string name="text_filter">Filter</string>
+    <string name="text_name">Name</string>
+    <string name="text_Address">Address</string>
+    <string name="text_mobile_number">Mobile Number</string>
+    <string name="sample_large_text">12, Rahuman Street\n NGO Colony,\n Choolaimedu\nChennai\nTamilNadu</string>
+    <string name="text_play_time">HH:MM</string>
+    <string name="text_status">Status</string>
+    <string name="text_assigned_to">Assigned To</string>
+    <string name="text_comments">Comments</string>
+    <string name="text_submit">Submit</string>
 </resources>

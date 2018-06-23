@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    android:columnCount="2"
+    android:rowCount="18"
+
+    tools:context=".LeadStatusActivity">
+
+    <TextView android:text="@string/text_name" />
+
+    <TextView
+        android:id="@+id/status_lead_name"
+        android:layout_gravity="right"
+        android:text="@string/app_name" />
+
+    <Space
+        android:layout_height="@dimen/grid_row_horizontal_space"
+        android:layout_columnSpan="2" />
+
+    <TextView
+        android:layout_gravity="top"
+        android:layout_rowSpan="4"
+        android:gravity="top"
+        android:text="@string/text_Address" />
+
+    <TextView
+        android:id="@+id/status_lead_address"
+        android:layout_gravity="right"
+        android:layout_rowSpan="4"
+        android:text="@string/sample_large_text" />
+
+    <Space
+        android:layout_height="@dimen/grid_row_horizontal_space"
+        android:layout_columnSpan="2" />
+
+    <TextView
+
+
+        android:text="@string/text_mobile_number" />
+
+    <TextView
+        android:id="@+id/status_mobile"
+        android:layout_gravity="right"
+
+        android:text="9999999999" />
+
+    <Space
+        android:layout_height="@dimen/grid_row_horizontal_space"
+        android:layout_columnSpan="2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+
+        android:layout_rowSpan="8"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_lead_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_action_play"
+            android:onClick="btnPlayStop_onClick"
+            />
+
+        <SeekBar
+            android:id="@+id/sb_lead_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@id/tv_time"
+            android:layout_toRightOf="@id/btn_lead_play" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:text="@string/text_play_time" />
+    </RelativeLayout>
+
+    <Space
+        android:layout_height="@dimen/grid_row_horizontal_space"
+        android:layout_columnSpan="2" />
+
+    <TextView
+
+        android:text="@string/text_status" />
+
+    <Spinner
+        android:layout_gravity="right"
+        android:text="" />
+
+    <Space
+        android:layout_height="@dimen/grid_row_horizontal_space"
+        android:layout_columnSpan="2" />
+
+    <TextView android:text="@string/text_assigned_to" />
+
+    <Spinner android:layout_gravity="right"></Spinner>
+
+    <Space
+        android:layout_height="@dimen/grid_row_horizontal_space"
+        android:layout_columnSpan="2" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/input_user_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/text_comments"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:maxLines="5" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:text="@string/text_submit" />
+</GridLayout>
